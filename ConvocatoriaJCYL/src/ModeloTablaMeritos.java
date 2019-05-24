@@ -33,11 +33,13 @@ public class ModeloTablaMeritos extends DefaultTableModel{
             case 2: 
                 return this.listaPersonas.get(row).getNombre();
             case 3: 
-                return this.listaPersonas.get(row).getNota1();
+                return this.listaPersonas.get(row).getExperiencia();
             case 4: 
-                return this.listaPersonas.get(row).getNota2();
+                return this.listaPersonas.get(row).getTitulos();
             case 5: 
-                return this.listaPersonas.get(row).getTotal();
+                return this.listaPersonas.get(row).getCursos();
+            case 6: 
+                return this.listaPersonas.get(row).getTotalM();
         }
         return null;
     }

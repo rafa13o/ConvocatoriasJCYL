@@ -1,3 +1,7 @@
+
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,9 +12,10 @@
  *
  * @author dam114
  */
-public class ModeloTablaConjunto {
+public class ModeloTablaConjunto extends DefaultTableModel{
     private String [] nColumnas = {"N OPOSICIÓN", "NIF/NIE", "APELLIDOS Y NOMBRE", "TOTAL"};
     private Class[] tipoColumna={Integer.class, String.class, String.class, Float.class};
+    public ArrayList<Persona> listaPersonas= new ArrayList();
     
     @Override
     public Object getValueAt(int row, int column) {
@@ -22,11 +27,7 @@ public class ModeloTablaConjunto {
             case 2: 
                 return this.listaPersonas.get(row).getNombre();
             case 3: 
-                return this.listaPersonas.get(row).getNota1();
-            case 4: 
-                return this.listaPersonas.get(row).getNota2();
-            case 5: 
-                return this.listaPersonas.get(row).getTotal();
+                return this.listaPersonas.get(row).getTotalM();
         }
         return null;
     }
@@ -38,7 +39,7 @@ public class ModeloTablaConjunto {
 
     @Override
     public String getColumnName(int column) {
-        return nombreColumnas[column];
+        return nColumnas[column];
     }
 
     @Override
