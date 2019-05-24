@@ -14,9 +14,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ModeloTablaMeritos extends DefaultTableModel{
     
-    private String[] nombreColumnas= new String[]{"NºOp", "NIF/NIE", "Apellidos y Nombre", "EJER PARTE 1", "EJER PARTE 2", "Total"};
-    private Class[] tipoColumna= new Class[]{int.class, String.class, String.class, float.class, float.class, float.class};
+    private String[] nombreColumnas= new String[]{"NºOP", "NIF/NIE", "APELLIDOS Y NOMBRES", "EXPERIENCIA", "TÍTULOS", "CURSOS", "TOTAL"};
+    private Class[] tipoColumna= new Class[]{Integer.class, String.class, String.class, Float.class, Float.class, Float.class, Float.class};
     public ArrayList<Persona> listaPersonas= new ArrayList<Persona>();
+
+    public ModeloTablaMeritos() {
+    
+    }
+    
     
     @Override
     public Object getValueAt(int row, int column) {

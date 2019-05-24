@@ -15,7 +15,6 @@ public class Persona {
     public float nota1;
     public float nota2;
     public float total;
-//    public boolean meritos;
     public float totalMeritos;
     
     public Persona(int nOp, String nif, String n, float n1, float n2, float t){
@@ -58,18 +57,5 @@ public class Persona {
         }
         return total;
     }
-    
-//    public boolean getMeritos(){
-//        if(totalMeritos!= 0){
-//            return true;
-//        }
-//        return false;
-//    }
-//    
-//    public float getTotalMeritos(){
-//       if(this.meritos== true){
-//           float nota= 
-//       } 
-//    }
-    
+
 }

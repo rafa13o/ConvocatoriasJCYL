@@ -1,8 +1,3 @@
-
-
-import java.util.ArrayList;
-import javax.swing.table.DefaultTableModel;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,11 +8,9 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author dam114
  */
-public class ModeloTablaAprobados extends DefaultTableModel{
-    
-    private String[] nombreColumnas= new String[]{"NºOP", "NIF/NIE", "APELLIDOS Y NOMBRE", "EJER PARTE 1", "EJER PARTE 2", "TOTAL"};
-    private Class[] tipoColumna= new Class[]{Integer.class, String.class, String.class, Float.class, Float.class, Float.class};
-    public ArrayList<Persona> listaPersonas= new ArrayList();
+public class ModeloTablaConjunto {
+    private String [] nColumnas = {"N OPOSICIÓN", "NIF/NIE", "APELLIDOS Y NOMBRE", "TOTAL"};
+    private Class[] tipoColumna={Integer.class, String.class, String.class, Float.class};
     
     @Override
     public Object getValueAt(int row, int column) {
