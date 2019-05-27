@@ -1,7 +1,7 @@
 
 
 import java.util.ArrayList;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.table.AbstractTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,11 +13,15 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author dam114
  */
-public class ModeloTablaAprobados extends DefaultTableModel{
+public class ModeloTablaAprobados extends AbstractTableModel{
     
     private String[] nombreColumnas= new String[]{"NºOP", "NIF/NIE", "APELLIDOS Y NOMBRE", "EJER PARTE 1", "EJER PARTE 2", "TOTAL"};
     private Class[] tipoColumna= new Class[]{Integer.class, String.class, String.class, Float.class, Float.class, Float.class};
-    public ArrayList<Persona> listaPersonas= new ArrayList();
+    public ArrayList<PersonaAprobados> listaPersonas= new ArrayList();
+    
+    public ModeloTablaAprobados(ArrayList<PersonaAprobados> p){
+        this.listaPersonas= p;
+    }
     
     @Override
     public Object getValueAt(int row, int column) {

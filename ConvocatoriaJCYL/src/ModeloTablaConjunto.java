@@ -1,6 +1,6 @@
 
 import java.util.ArrayList;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.table.AbstractTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,10 +12,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author dam114
  */
-public class ModeloTablaConjunto extends DefaultTableModel{
+public class ModeloTablaConjunto extends AbstractTableModel{
     private String [] nColumnas = {"N OPOSICIÓN", "NIF/NIE", "APELLIDOS Y NOMBRE", "TOTAL"};
     private Class[] tipoColumna={Integer.class, String.class, String.class, Float.class};
-    public ArrayList<Persona> listaPersonas= new ArrayList();
+    public ArrayList<PersonaConjuntos> listaPersonas= new ArrayList();
+    
+    public ModeloTablaConjunto(ArrayList<PersonaConjuntos> p){
+        this.listaPersonas= p;
+    }
     
     @Override
     public Object getValueAt(int row, int column) {
@@ -27,7 +31,7 @@ public class ModeloTablaConjunto extends DefaultTableModel{
             case 2: 
                 return this.listaPersonas.get(row).getNombre();
             case 3: 
-                return this.listaPersonas.get(row).getTotalM();
+                return this.listaPersonas.get(row).getTotalC();
         }
         return null;
     }
@@ -44,7 +48,7 @@ public class ModeloTablaConjunto extends DefaultTableModel{
 
     @Override
     public int getColumnCount() {
-        return 6;
+        return 4;
     }
 
     @Override
